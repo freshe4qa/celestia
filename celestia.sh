@@ -126,7 +126,7 @@ sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.005utia\"|" $HOME
 
 # set peers and seeds
 SEEDS='3f472746f46493309650e5a033076689996c8881@celestia-testnet.rpc.kjnodes.com:20659'
-PEERS=''
+PEERS='1afcd97b0bf289700378e18b45dc1f927917bba0@65.109.92.79:11656,eaa763cde89fcf5a8fe44274a5ee3ce24bce2c5b@64.227.18.169:26656,0d0f0e4a149b50a96207523a5408611dae2796b6@198.199.82.109:26656,c2870ce12cfb08c4ff66c9ad7c49533d2bd8d412@178.170.47.171:26656,e8906342e657ace92e1ed8599f0949da8dd75fbd@146.19.24.52:20656,3584c49855123abdc16b01a47f9e1bea38a9db1b@154.26.155.102:26656'
 sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.celestia-app/config/config.toml
 
 # config pruning
