@@ -163,18 +163,6 @@ break
 ;;
 
 "Create Validator")
-uptickd tx staking create-validator \
-  --amount 5000000000000000000auptick \
-  --from $WALLET \
-  --commission-max-change-rate "0.01" \
-  --commission-max-rate "0.2" \
-  --commission-rate "0.07" \
-  --min-self-delegation "1" \
-  --pubkey  $(uptickd tendermint show-validator) \
-  --moniker $NODENAME \
-  --chain-id $UPTICK_CHAIN_ID \
-  --gas=auto
-  
   celestia-appd tx staking create-validator \
 --amount=1000000utia \
 --pubkey=$(celestia-appd tendermint show-validator) \
