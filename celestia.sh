@@ -44,6 +44,10 @@ if [ ! $NODENAME ]; then
 	read -p "Enter node name: " NODENAME
 	echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
 fi
+if [ ! $EVM ]; then
+	read -p "Enter ETH address: " EVM
+	echo 'export EVM='$EVM >> $HOME/.bash_profile
+fi
 CELESTIA_PORT=20
 if [ ! $WALLET ]; then
 	echo "export WALLET=wallet" >> $HOME/.bash_profile
@@ -168,6 +172,8 @@ break
 --pubkey=$(celestia-appd tendermint show-validator) \
 --moniker=$NODENAME \
 --chain-id=$CELESTIA_CHAIN_ID \
+--evm-address=$EVM \
+--orchestrator-address=$WALLET \
 --commission-rate=0.05 \
 --commission-max-rate=0.20 \
 --commission-max-change-rate=0.01 \
